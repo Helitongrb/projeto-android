@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+@font-face{
+    font-family: 'idroid' ;
+src: url('idroid.otf') format('opentype')
+}
+@font-face {
+    font-family:'BebasNeue' ;
+    src: url('./fontes/BebasNeue.ttf') format('truetype')
+}
+
+    :root{ /*criei uma variavel de cores para depois selecionar no ctrl+ espaço*/
+        --pricipal:#3DDC84;
+        --margem: #83E1AD;
+        --titulos: #1A5C37;
+        --degrade: #2FA866;
+
+        --fonte-padrao: arial, verdana, sans-serif;
+        --fonte-destaque: 'BebasNeue', cursive;
+        --fonte-titulos:'idroid', cursive;
+    }
+
+    *{ /*usei a tag * para as tags serem global, como os exemplos abaixo,todo meu conteudo nao tera margin*/
+        margin: 0px;
+        padding: 0px;
+        
+
+    }
+
+
+
+body{
+    background-color:#83E1AD ;
+    font-family: var(--fonte-padrao);
+    text-align: justify;
+}
+
+
+    
+header{
+    background-image: linear-gradient(to top, var(--titulos), var(--degrade)); /*usado para fazer o degradê*/
+    min-height: 200px;
+    text-align: center;
+    padding-top: 70px;/*usei pora ganhar espaçamento no titulo*/
+}
+
+header > h1{
+    color: #ffffff;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.863);
+    font-weight: normal;
+    
+   
+}
+
+header > p{
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.575);
+    
+}
+
+nav{
+   background-color: #082c18;
+   padding: 10px;
+   box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.692);
+   
+}
+
+nav > a {
+    color: #4aeb92;
+    text-decoration: none;
+    padding: 10px;
+    font-size: bold;
+    transition-duration: .5s;
+}
+
+nav > a:hover {
+
+       background-color: #3DDC84; 
+       border-radius: 2px;
+}
+main {
+    background-color: white;
+   
+    /*Criando responsividade para meu site com essas tag*/
+
+    min-width: 280px;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.733);
+    border-bottom-left-radius: 10px ;
+    border-bottom-right-radius: 10px ; /*fiz com que apenas as bordas de baixo tenham arredondado*/
+
+
+}
+
+main h1{
+    color: #1A5C37;
+    font-family: var(--fonte-titulos);
+    font-weight: normal;
+    
+}   
+
+main h2{
+    font-family: var(--fonte-titulos);
+    color: var(--titulos);
+    background-image: linear-gradient(to right, var(--pricipal), transparent);
+    font-weight: normal;
+}
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px; /*usado para dar paragrafo*/
+    font-size: 1em;
+}
+
+main img{
+    width: 100%;
+
+}
+main strong{
+    color: #2FA866;
+    font-weight: bold;
+    background-color: #1A5C37;
+    padding: 2px 4px;
+    border-radius: 3px;
+
+}
+
+main a {
+    font-weight: bold;
+    color: #2FA866;
+    text-decoration: none;
+    background-color: #1A5C37;
+    padding: 2px 4px;
+    border-radius: 3px;
+
+
+}
+main >a:hover{
+    text-decoration: none;
+    color: #83E1AD;
+}
+
+main img.pequena {
+    max-width: 350px;
+    display: block; /*botei a imagem em bloco*/
+    margin: auto;
+    
+} /*dimminuindo a imagem direto pelo css*/
+div.video{
+    background-color: #022712;
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%; /*usei a porcentagem para mudar a barra preta do video*/
+    position: relative; /*Posição relativa*/
+
+}
+div.video > iframe {
+    position:absolute; /*Posição absoluta*/
+    top: 5%;
+    left: 5%;
+    width: 90%; /**/
+    height: 90%;
+}
+aside{
+    background-color: #4aeb92;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.603);
+}
+aside > ul {
+    list-style-position: inside; /*usei essa tag para por o estilo (as bolinhas para dentro)*/
+    list-style-type: '\2714\0020\0020';
+    columns: 2; /*usado para fazer coluna nas listas*/
+    
+
+}
+h3{
+    color: #022712;
+    font-family: var(--fonte-titulos);
+    background-image: linear-gradient(to right, var(--titulos), transparent);
+    border-radius: 5px;
+    padding: 7px;
+}
+
+a.externo::after{
+    content: '\1F517\00A0'; /*usei para personalizar todo link que tava na class externo*/
+}
+
+
+
+footer{
+    background-color: #1A5C37;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 100px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: bold;
+}
